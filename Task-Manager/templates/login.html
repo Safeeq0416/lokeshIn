@@ -1,3 +1,4 @@
+login.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="container mt-5">
     <h1>Login</h1>
     {% if error %}
-        <p style="color: red;">{{ error }}</p>
+        <p class="text-danger">{{ error }}</p>
     {% endif %}
     <form method="post" action="/login">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <input type="submit" value="Login">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" required><br>
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required><br>
+        <input type="submit" value="Login" class="btn btn-primary">
     </form>
-    <p>Don't have an account? <a href="/register">Register here</a>.</p>
+    <p class="mt-3">Don't have an account? <a href="/register">Register here</a>.</p>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
